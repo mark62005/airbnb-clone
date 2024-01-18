@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 
-const IndexPage = () => {
+const TripsPage = () => {
 	return (
 		<View>
-			<Text>IndexPage</Text>
+			<Text>TripsPage</Text>
 		</View>
 	);
 };
-export default IndexPage;
+export default TripsPage;
