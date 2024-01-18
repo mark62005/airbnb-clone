@@ -4,7 +4,7 @@ export function MonoText(props: TextProps) {
 	return (
 		<Text
 			{...props}
-			style={[props.style, { fontFamily: "SpaceMono" }]}
+			style={[props.style, { fontFamily: "Montserrat" }]}
 		/>
 	);
 }

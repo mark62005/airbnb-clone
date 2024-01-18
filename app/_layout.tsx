@@ -25,6 +25,8 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
 		Montserrat: require("../assets/fonts/Montserrat-Regular.ttf"),
+		"Montserrat-SemiBold": require("../assets/fonts/Montserrat-SemiBold.ttf"),
+		"Montserrat-Bold": require("../assets/fonts/Montserrat-Bold.ttf"),
 		...FontAwesome.font,
 	});
 
@@ -55,10 +57,6 @@ function RootLayoutNav() {
 				<Stack.Screen
 					name="(tabs)"
 					options={{ headerShown: false }}
-				/>
-				<Stack.Screen
-					name="modal"
-					options={{ presentation: "modal" }}
 				/>
 			</Stack>
 		</ThemeProvider>
