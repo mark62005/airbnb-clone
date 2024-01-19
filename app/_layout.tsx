@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import {
 	DarkTheme,
@@ -5,9 +6,10 @@ import {
 	ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, router } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export {
 	// Catch any errors thrown by the Layout component.
@@ -57,6 +59,45 @@ function RootLayoutNav() {
 				<Stack.Screen
 					name="(tabs)"
 					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="(modals)/login"
+					options={{
+						title: "Log in or Sign up",
+						headerTitleStyle: {
+							fontFamily: "Montserrat-SemiBold",
+						},
+						presentation: "modal",
+						headerLeft: () => (
+							<TouchableOpacity onPress={() => router.back()}>
+								<Ionicons
+									name="close-outline"
+									size={28}
+								/>
+							</TouchableOpacity>
+						),
+					}}
+				/>
+				<Stack.Screen
+					name="listings/[id]"
+					options={{
+						headerTitle: "Listing Details",
+					}}
+				/>
+				<Stack.Screen
+					name="(modals)/bookings"
+					options={{
+						presentation: "transparentModal",
+						animation: "fade",
+						headerLeft: () => (
+							<TouchableOpacity onPress={() => router.back()}>
+								<Ionicons
+									name="close-outline"
+									size={28}
+								/>
+							</TouchableOpacity>
+						),
+					}}
 				/>
 			</Stack>
 		</ThemeProvider>
